@@ -30,7 +30,7 @@
     },
     "scriptFile": {
             "type": "string",
-            "defaultValue": "https://demo1stg.blob.core.windows.net/vmms/CopyFile.ps1",
+            "defaultValue": "https://github.com/wasimbloch/Azure-Platform-Maintenance-Notification/master/CopyFile.ps1",
             "metadata": {
                   "description": "The script file location."
             }
@@ -205,7 +205,6 @@
                   "autoUpgradeMinorVersion": true,
                 "settings": {
                   "fileUris": [ "[parameters('scriptFile')]" ],
-                  //"commandToExecute": "powershell -ExecutionPolicy Unrestricted -File CopyFile.ps1",
                   "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File CopyFile.ps1 ', parameters('_artifactsLocation'), ' ', variables('cseScriptFolder'), ' ', variables('cseScriptFileName'), ' ', variables('vmmsFileName'))]",
                   "timestamp": 123456789
                 }
