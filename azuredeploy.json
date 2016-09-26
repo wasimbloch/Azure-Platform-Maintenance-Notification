@@ -30,7 +30,7 @@
     },
     "scriptFile": {
             "type": "string",
-            "defaultValue": "https://github.com/wasimbloch/Azure-Platform-Maintenance-Notification/master/CopyFile.ps1",
+            "defaultValue": "https://github.com/wasimbloch/Azure-Platform-Maintenance-Notification/master/Scripts/CopyFile.ps1",
             "metadata": {
                   "description": "The script file location."
             }
