@@ -6,7 +6,7 @@
             "value": "adminuser"
         },
         "_artifactsLocation": {
-            "value": "defaultValue": "https://github.com/wasimbloch/Azure-Platform-Maintenance-Notification/master/CopyFile.ps1"
+            "defaultValue": "https://github.com/wasimbloch/Azure-Platform-Maintenance-Notification/master/CopyFile.ps1"
         },
         "adminPassword": {
             "value": ""
