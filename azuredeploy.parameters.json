@@ -6,10 +6,10 @@
             "value": "adminuser"
         },
         "_artifactsLocation": {
-            "value": "https://demo1stg.blob.core.windows.net"
+            "value": "defaultValue": "https://github.com/wasimbloch/Azure-Platform-Maintenance-Notification/master/CopyFile.ps1"
         },
         "adminPassword": {
-            "value": "adminuser@123"
+            "value": ""
         }
     }
 }
