@@ -5,4 +5,4 @@ Azure Platform Maintenance Notification using In-VM Metadata Service
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
-This template creates the virtual machine with In-VM metadata service is installed using the windows task scheduler. Task scheduler is configured to use in-VM metadata service using the PowerShell script and creates the event viewer entry for upcoming virtual macine reboot event. User can configure OMS and can view maintenance notification for the upcoming virtual machine Reboot event.
+This template creates the virtual machine with In-VM metadata service is installed using the windows task scheduler. Task scheduler is configured to use in-VM metadata service using the PowerShell script and creates the event viewer entry for upcoming virtual macine reboot event. User can configure OMS to view upcoming maintenace notification from the dashboard.
