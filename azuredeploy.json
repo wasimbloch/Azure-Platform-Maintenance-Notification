@@ -1,4 +1,4 @@
-﻿{
+{
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
@@ -28,13 +28,20 @@
         "description": "Auto-generated token to access _artifactsLocation"
       }
     },
-    "scriptFile": {
+    "scriptFolder": {
             "type": "string",
-            "defaultValue": "https://github.com/wasimbloch/Azure-Platform-Maintenance-Notification/master/Scripts/CopyFile.ps1",
+            "defaultValue": "Scripts",
             "metadata": {
                   "description": "The script file location."
             }
-        }
+        },
+    "scriptFile": {
+      "type": "string",
+      "defaultValue": "https://github.com/wasimbloch/Azure-Platform-Maintenance-Notification/master/Scripts/CopyFile.ps1",
+      "metadata": {
+        "description": "The script file location."
+      }
+    }
   },
   "variables": {
     "imagePublisher": "MicrosoftWindowsServer",
@@ -48,9 +55,9 @@
     "publicIPAddressName": "myPublicIP",
     "publicIPAddressType": "Dynamic",
     "vhdStorageContainerName": "vhds",
-    "vmName": "VmmsWindowsVM",
+    "vmName": "apmnWindowsVM",
     "vmSize": "Standard_A2",
-    "virtualNetworkName": "VmmsVNET",
+    "virtualNetworkName": "apmnVNET",
     "vnetId": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
     "vhdStorageName": "[concat('vhdstorage', uniqueString(resourceGroup().id))]",
@@ -205,7 +212,8 @@
                   "autoUpgradeMinorVersion": true,
                 "settings": {
                   "fileUris": [ "[parameters('scriptFile')]" ],
-                  "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File CopyFile.ps1 ', parameters('_artifactsLocation'), ' ', variables('cseScriptFolder'), ' ', variables('cseScriptFileName'), ' ', variables('vmmsFileName'))]",
+                  //"commandToExecute": "powershell -ExecutionPolicy Unrestricted -File CopyFile.ps1",
+                  "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File CopyFile.ps1 ', parameters('_artifactsLocation'), ' ', parameters('scriptFolder'), ' ', variables('cseScriptFileName'), ' ', variables('vmmsFileName'))]",
                   "timestamp": 123456789
                 }
               }
