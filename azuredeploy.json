@@ -17,6 +17,7 @@
     },
     "_artifactsLocation": {
       "type": "string",
+      "defaultValue": "https://raw.github.com/wasimbloch/Azure-Platform-Maintenance-Notification/master",
       "metadata": {
         "description": "Auto-generated container in staging storage account to receive post-build staging folder upload"
       }
